@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zomato Clone</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="scriptjs" href="script.js">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="images/logo.png">
+
+    </head>
+    <body>
+        <header>
+            <header class="navbar">
+            <div class="logo">Zomato Clone</div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Login</a>
+            </nav>
+            <div class="menu-icon" onclick="taggleMenu()">☰</div>
+            <!-- ===== LOGIN POPUP ===== -->
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Login to Zomato Clone</h2>
+                    <input type="text" id="username" placeholder="Enter your email or phone">
+                    <input type="password" id="password" placeholder="Enter your password">
+                    <button onclick="loginUser()">Login</button>
+                    <p>Don't have an account? <a href="#">Sign up</a></p>
+                </div>
+            </div>
+
+        </header>
+
+    <section>
+        <section class="search-section">
+            <div class="search-box">
+                <h1>Discover the best food & drinks</h1>
+        
+                <div class="search-bar">
+                    <select class="location-select">
+                        <option selected>📍 Select Location</option>
+                        <option>Delhi</option>
+                        <option>Mumbai</option>
+                        <option>Jaipur</option>
+                        <option>Hyderabad</option>
+                        <option>Chennai</option>
+                    </select>
+        
+                    <input type="text" placeholder="Search for restaurant, cuisine or dish...">
+                    <button>Search</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== CART SECTION ===== -->
+        <section id="cart-section">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: ₹<span id="total-price">0</span></h3>
+                <button onclick="checkout()">Checkout</button>
+            </div>
+
+            <div class="card">
+                <img src="images.1.jpeg" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>₹199</p>
+                <button onclick="addToCart('Pizza', 199)">Add to Cart</button>
+            </div>
+            
+        </section>
+        <!-- ===== SEARCH BAR ===== -->
+        <section id="search-section">
+            <input type="text" id="searchInput" placeholder="Search your favourite food..." onkeyup="searchFood()">
+        </section>
+
+
+        <section class="restaurant-list">
+            <h2>Popular Restaurants</h2>
+        
+            <div class="card-container">
+                <div class="restaurant-card">
+                    <img src="images.1.jpeg" alt="Restaurant">
+                    <h3>Pizza Palace</h3>
+                    <p>Italian, Pizza</p>
+                    <span>⭐ 4.5</span>
+                </div>
+        
+                <div class="restaurant-card">
+                    <img src="Image.2.jpeg" alt="Restaurant">
+                    <h3>Burger King</h3>
+                    <p>American, Burgers</p>
+                    <span>⭐ 4.2</span>
+                </div>
+        
+                <div class="restaurant-card">
+                    <img src="Image.3.jpeg" alt="Restaurant">
+                    <h3>Tandoori Tales</h3>
+                    <p>Indian, Biryani</p>
+                    <span>⭐ 4.6</span>
+                </div>
+        
+                <div class="restaurant-card">
+                    <img src="image.4.jpeg" alt="Restaurant">
+                    <h3>Roll Express</h3>
+                    <p>Street Food, Rolls</p>
+                    <span>⭐ 4.3</span>
+                </div>
+
+                <section class="food-category">
+                    <h2>Explore Food Categories</h2>
+                
+                    <div class="category-container">
+                        <div class="category-card">
+                            <img src="images.1.jpeg" alt="Pizza">
+                            <h3>Pizza</h3>
+                        </div>
+                
+                        <div class="category-card">
+                            <img src="Image.2.jpeg" alt="Burger">
+                            <h3>Burger</h3>
+                        </div>
+                
+                        <div class="category-card">
+                            <img src="Image.3.jpeg" alt="Biryani">
+                            <h3>Biryani</h3>
+                        </div>
+                
+                        <div class="category-card">
+                            <img src="image.4.jpeg" alt="Rolls">
+                            <h3>Rolls</h3>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <button id="showAllBtn">Show All</button>
+    </section>
+    
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Zomato Clone</h3>
+                <p>Discover the best food & drinks in your city. Order now and enjoy your meal!</p>
+            </div>
+    
+            <div class="footer-column">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Who We Are</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Work With Us</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="img.jpg.0.png" alt="Facebook"></a>
+                    <a href="#"><img src="image.00.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="twitter.jpg" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Zomato Clone by Amaan Mirza | All Rights Reserved 🍕</p>
+        </div>
+    </footer>
+
+</body>
